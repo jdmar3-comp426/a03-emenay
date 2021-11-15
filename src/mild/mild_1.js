@@ -68,4 +68,5 @@ export function countArray(array) {
             a[length] = {o: 1}
         }
     }
+    return a
 }
