@@ -57,5 +57,15 @@ export function maxAndMin(numbers) {
  *
  */
 export function countArray(array) {
-    
+    let a = []
+    for(let i = 0; i < array.length; i++) {
+        let o = array[i]
+        if(a.includes(o)) {
+            let j = a.findIndex(o)
+            let n = a[o] + 1
+            a[j] = {o: n}
+        } else {
+            a[length] = {o: 1}
+        }
+    }
 }
