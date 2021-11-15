@@ -65,7 +65,7 @@ export function countArray(array) {
             let n = a[o] + 1
             a[j] = {o: n}
         } else {
-            a[length] = {o: 1}
+            a[a.length] = {o: 1}
         }
     }
     return a
