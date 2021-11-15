@@ -10,7 +10,7 @@
  */
 export function sumToString(a, b) {
     i = a + b;
-    return {a} + " + " + {b} + " = " + {i};
+    console.log({a} + " + " + {b} + " = " + {i});
 }
 
 
@@ -31,7 +31,7 @@ export function getIncreasingArray(startNumber, endNumber) {
         arr[j] = startNumber
         j++
     }
-    return arr
+    console.log(arr);
 }
 
 /**
@@ -50,7 +50,7 @@ export function maxAndMin(numbers) {
         if(numbers[i] < min)
             min = numbers[i]
     }
-    return min, max
+    console.log(min, max)
 }
 
 /**
