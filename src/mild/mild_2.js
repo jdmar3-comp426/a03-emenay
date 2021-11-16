@@ -26,10 +26,11 @@ export function identifyVariable(variable) {
 
  */
 export function identifyArray(array) {
-   var a = {}
+   var a = []
    array.forEach(element => {
-      a[a.length] = identifyVariable(element)
+      a.push(identifyVariable(element))
    });
+   return a
 }
 
 /**
