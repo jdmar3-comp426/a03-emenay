@@ -26,14 +26,7 @@ export function getSum(array) {
  * console.log(getMedian(array)); // 4.5
  */
 export function getMedian(array) {
-    let n = array.length/2
-    let a = array.sort()
-    if(a.length % 2 === 0) {
-        let sum = a[n-1] + a[n]
-        return sum/2.0
-    }
-    else
-        return a[Math.trunc(n)]
+    return Math.median(array)
 }
 
 /**
@@ -56,6 +49,14 @@ export function getMedian(array) {
  }
  */
 export function getStatistics(array) {
-
+    let min = Math.min(...array)
+    let max = Math.max(...array)
+    let median = getMedian(array)
+    let variance = Math.variance(...array, Math.mean())
+    let mean = Math.mean(...array)
+    let length = array.length
+    let sum = getSum(array)
+    let standard_deviation = Math.sqrt(variance)
+    return {min, max, median, variance, mean, length, sum, standard_deviation}
 }
 
