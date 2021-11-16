@@ -6,7 +6,8 @@
  * returns: { type: 'number', value: 4 }
  */
 export function identifyVariable(variable) {
-
+   let a = typeof(variable)
+   return {a, variable}
 }
 
 
@@ -24,7 +25,10 @@ export function identifyVariable(variable) {
 
  */
 export function identifyArray(array) {
-
+   var a = {}
+   array.forEach(element => {
+      a[a.length] = identifyVariable(element)
+   });
 }
 
 /**
