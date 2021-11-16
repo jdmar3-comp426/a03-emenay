@@ -63,7 +63,7 @@ export function countArray(array) {
         if(a.includes(o)) {
             a.o = a[0] + 1
         } else {
-            a[a.length] = {o: 1}
+            a.push({o: 1})
         }
     }
     return a
