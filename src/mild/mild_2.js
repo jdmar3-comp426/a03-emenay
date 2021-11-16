@@ -7,7 +7,8 @@
  */
 export function identifyVariable(variable) {
    let type = typeof(variable)
-   return {type, variable}
+   let value = variable
+   return {type, value}
 }
 
 
