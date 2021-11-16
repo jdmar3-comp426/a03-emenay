@@ -30,7 +30,7 @@ export function getMedian(array) {
     let a = array.sort()
     if(a.length % 2 === 0) {
         let sum = a[n-1] + a[n]
-        return sum/2
+        return sum/2.0
     }
     else
         return a[Math.trunc(n)]
