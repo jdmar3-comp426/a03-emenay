@@ -60,7 +60,7 @@ export function getStatistics(array) {
     let length = array.length
     let mean = getSum(array)/array.length
     let changed = array.filter((element) => Math.pow((element - mean), 2))
-    let variance = getSum(changed) / (length-1)
+    let variance = getSum(changed) / length
     let sum = getSum(array)
     let standard_deviation = Math.sqrt(variance)
     return {length, sum, mean, median, min, max, variance, standard_deviation}
