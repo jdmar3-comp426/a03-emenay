@@ -33,7 +33,7 @@ export function getMedian(array) {
         return sum/2
     }
     else
-        return array[Math.trunc(array.length/2)-1]
+        return array[Math.trunc(n)]
 }
 
 /**
