@@ -59,10 +59,8 @@ export function maxAndMin(numbers) {
 export function countArray(array) {
     var a = {}
     for(let i = 0; i < array.length; i++) {
-        let n;
-        if(a[array[i]].isNaN())
-            n = 0
-        else
+        let n = 0;
+        if(a[array[i]])
             n = a[array[i]]
         a[array[i]] = n + 1
     }
