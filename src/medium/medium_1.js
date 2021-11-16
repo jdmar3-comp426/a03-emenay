@@ -27,7 +27,7 @@ export function getSum(array) {
  */
 export function getMedian(array) {
     let n = array.length/2
-    let a = [...arr].sort((a, b) => a - b)
+    let a = [...array].sort((a, b) => a - b)
     if (arr.length % 2 === 0) {
         return (a[n] + a[n-1]) / 2
     }
