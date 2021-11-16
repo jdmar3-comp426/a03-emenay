@@ -27,13 +27,13 @@ export function getSum(array) {
  */
 export function getMedian(array) {
     let n = array.length/2
-    array.sort()
-    if(array.length % 2 === 0) {
-        let sum = array[n-1] + array[n]
+    let a = array.sort()
+    if(a.length % 2 === 0) {
+        let sum = a[n-1] + a[n]
         return sum/2
     }
     else
-        return array[Math.trunc(n)]
+        return a[Math.trunc(n)]
 }
 
 /**
