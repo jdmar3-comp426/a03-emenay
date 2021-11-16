@@ -71,7 +71,7 @@ export function removeKey(object, key) {
  */
 export function removeKeyNonDestructive(object, key) {
    const o = object
-   o.removeKey(key)
+   removeKey(o, key)
    return o
 }
 
