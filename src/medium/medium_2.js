@@ -21,8 +21,8 @@ see under the methods section
  */
 export const allCarStats = {
     avgMpg: mpg_data.forEach(element => {
-        let city = element.city_mpg + avgMpg[0]
-        let height = element.highway_mpg + avgMpg[1]
+        let city = element.city_mpg + avgMpg[0] | 0
+        let highway = element.highway_mpg + avgMpg[1] | 0
         if (mpg_data.indexOf(element) === mpg_data.length-1) {
             city = city / mpg_data.length
             highway = highway / mpg_data.length
