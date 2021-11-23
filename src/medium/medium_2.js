@@ -6,7 +6,25 @@ This section can be done by using the array prototype functions.
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 see under the methods section
 */
+let h = [];
+let c = []
+for(let i = 0; i < mpg_data.length; i++) {
+    h[i] = mpg_data[i].highway_mpg
+    c[i] = mpg_data[i].city_mpg
+}
+let highway = getStatistics(h).mean
+let city = getStatistics(c).mean
 
+let ays = []
+for(let i = 0; i < mpg_data.length; i++) {
+    ays[i] = mpg_data[i].year
+}
+
+let hy = 0
+for(let i = 0; i < mpg_data.length; i++) {
+    if(mpg_data[i].hybrid)
+        hy+=1
+}
 
 /**
  * This object contains data that has to do with every car in the `mpg_data` object.
@@ -20,27 +38,9 @@ see under the methods section
  * @param {allCarStats.ratioHybrids} ratio of cars that are hybrids
  */
 export const allCarStats = {
-    avgMpg: mpg_data.forEach(element => {
-        let city = element.city_mpg + avgMpg[0] | 0
-        let highway = element.highway_mpg + avgMpg[1] | 0
-        if (mpg_data.indexOf(element) === mpg_data.length-1) {
-            city = city / mpg_data.length
-            highway = highway / mpg_data.length
-            avgMpg = {city, highway}
-        }
-    }),
-    allYearStats: mpg_data.forEach(element => {
-        allYearStats = [...allYearStats, element.year]
-        if (mpg_data.indexOf(element) === mpg_data.length-1) {
-            allYearStats = getStatistics(allYearStats)
-        }
-    }),
-    ratioHybrids: mpg_data.forEach(element => {
-        ratioHybrids = [...ratioHybrids, element.hybrid]
-        if (mpg_data.indexOf(element) === mpg_data.length-1) {
-            ratioHybrids = ratioHybrids/mpg_data.length
-        }
-    }),
+    avgMpg: {highway, city},
+    allYearStats: getStatistics(ays),
+    ratioHybrids: hy/mpg_data.length,
 };
 
 
