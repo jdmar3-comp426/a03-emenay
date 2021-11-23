@@ -40,7 +40,7 @@ for(let i = 0; i < mpg_data.length; i++) {
 export const allCarStats = {
     avgMpg: {city, highway},
     allYearStats: getStatistics(ays),
-    ratioHybrids: hy/mpg_data.length,
+    ratioHybrids: hy/mpg_data.length
 };
 
 
