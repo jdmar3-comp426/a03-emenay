@@ -43,6 +43,12 @@ export const allCarStats = {
     ratioHybrids: hy/mpg_data.length
 };
 
+function isHybrid(o) {
+    return o.hybrid
+}
+
+array = mpg_data.filter(isHybrid)
+
 
 /**
  * HINT: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
@@ -102,6 +108,6 @@ export const allCarStats = {
  * }
  */
 export const moreStats = {
-    makerHybrids: undefined,
+    makerHybrids: array,
     avgMpgByYearAndHybrid: undefined
 };

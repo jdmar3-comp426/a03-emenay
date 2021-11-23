@@ -17,10 +17,17 @@ queries.
  * sorted by horsepower in descending order.
  *
  */
-export function searchHighPower(car_data, minHorsepower, minTorque) {
 
+
+
+export function searchHighPower(car_data, minHorsepower, minTorque) {
+    car_data.filter(horntor)
+    
 }
 
+function horntor(o) {
+    return o.horsepower >= minHorsepower && o.torque >= minTorque
+}
 
 /**
  * @param {array} car_data
