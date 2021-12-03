@@ -149,7 +149,12 @@ export const someEven = (arr, test) => {
  *       -->  { pass: [1, 5, 31], fail: [90] }
  */
 export const filter = (arr, test) => {
-
+    let a = {pass: [], fail: []}
+    for(let i = 0; i < arr.length; i++) {
+        if(test(arr[i])) { a.pass.push(arr[i]) }
+        else {a.fail.push(arr[i])}
+    }
+    return a
 };
 
 
@@ -159,7 +164,7 @@ export const filter = (arr, test) => {
  *   odd numbers. Use the "everyEven" function in this function.
  */
 export const allEvensAreOdd = (arr) => {
-
+    return !everyEven(arr, num => num % 2 === 1)
 };
 
 
