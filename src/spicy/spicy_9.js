@@ -47,9 +47,7 @@ export const repeatDemo = () => {
  *   product of num1 and num2.
  */
 export const multiplyBy = (num1) => {
-    return function(num2){
-        num1*num2
-    }
+    return function(num2){num1*num2}
 };
 
 
@@ -93,7 +91,10 @@ export const tenTimesFifty = () => {
  *    everyEven([1, 1, 0, 1, 1], x => x === 1)  <--  returns false
  */
 export const everyEven = (arr, test) => {
-
+    for(let i = 0; i < arr.length; i++) {
+        if(i % 2 === 0 && !test(arr[i]))
+            return false
+    }
 };
 
 
