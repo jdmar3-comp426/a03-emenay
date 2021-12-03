@@ -59,11 +59,7 @@ export function getStatistics(array) {
     let median = getMedian(array)
     let length = array.length
     let mean = getSum(array)/array.length
-    let changed = [length]
-    for(let i = 0; i < length; i++) {
-        changed[i] = (array[i] - mean) * (array[i] - mean)
-    }
-    let variance = getSum(changed) / (length)
+    let variance = variance(array, mean)
     let sum = getSum(array)
     let standard_deviation = Math.sqrt(variance)
     return {length, sum, mean, median, min, max, variance, standard_deviation}
