@@ -56,7 +56,7 @@ export function searchMpg(car_data, minCity, minHighway) {
  * @returns {[]} array of cars
  */
 export function searchName(car_data, searchTerm) {
-    var a = car_data.filter(object => object.id.contains(searchTerm))
+    var a = car_data.filter(object => object.id == searchTerm)
     return a
 }
 
@@ -70,5 +70,15 @@ export function searchName(car_data, searchTerm) {
  * @returns {[]} an array of car objects
  */
 export function searchByYear(car_data, years) {
+    var a = []
+    var arr = []
+    for(let i = 0; i < years.length; i++) {
+        a = car_data.filter(o => o.year == years[i])
+        arr.push(a)
+    }
+    arr.sort(function(a, b) {
+        return b.year - a.year
+    })
 
+    return arr
 }
