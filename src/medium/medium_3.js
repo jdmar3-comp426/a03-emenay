@@ -41,7 +41,9 @@ function horntor(o, minHorsepower, minTorque) {
  *
  */
 export function searchMpg(car_data, minCity, minHighway) {
-
+    let a = car_data.filter(o => o.city_mpg >= minCity && o.highway_mpg >= minHighway)
+    a.sort(function(a, b) {return b.highway_mpg - a.highway_mpg})
+    return a
 }
 
 
