@@ -61,8 +61,7 @@ export function getStatistics(array) {
     let mean = getSum(array)/array.length
     let changed = [length]
     for(let i = 0; i < length; i++) {
-        changed[i] = array[i] - mean
-        changed[i] = changed[i]*changed[i]
+        changed[i] = (array[i] - mean) * (array[i] - mean)
     }
     let variance = getSum(changed) / (length)
     let sum = getSum(array)
