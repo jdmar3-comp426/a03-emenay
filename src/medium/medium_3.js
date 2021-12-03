@@ -21,12 +21,12 @@ queries.
 
 
 export function searchHighPower(car_data, minHorsepower, minTorque) {
-    let a = car_data.filter(horntor)
+    let a = car_data.filter(horntor(o, minHorsepower, minTorque))
     a.sort(function(a, b) {return b.horsepower - a.horsepower})
     return a
 }
 
-function horntor(o) {
+function horntor(o, minHorsepower, minTorque) {
     return o.horsepower >= minHorsepower && o.torque >= minTorque
 }
 
