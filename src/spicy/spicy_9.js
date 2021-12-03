@@ -123,6 +123,7 @@ export const someEven = (arr, test) => {
         if (i % 2 === 0 && test(arr[i]))
             return true
     }
+    return false
 };
 
 
