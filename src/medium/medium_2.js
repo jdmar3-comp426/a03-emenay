@@ -41,12 +41,12 @@ for(let i = 0; i < mpg_data.length; i++) {
  function isHybrid(o) {
     return o.hybrid
 }
-
 let array = mpg_data.filter(isHybrid)
+
 export const allCarStats = {
     avgMpg: {city, highway},
     allYearStats: getStatistics(ays),
-    ratioHybrids: hy/array.length
+    ratioHybrids: hy/mpg_data.length
 };
 
 /**
