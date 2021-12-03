@@ -95,6 +95,7 @@ export const everyEven = (arr, test) => {
         if(i % 2 === 0 && !test(arr[i]))
             return false
     }
+    return true
 };
 
 
