@@ -6,7 +6,25 @@ This section can be done by using the array prototype functions.
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 see under the methods section
 */
+let h = [];
+let c = []
+for(let i = 0; i < mpg_data.length; i++) {
+    h[i] = mpg_data[i].highway_mpg
+    c[i] = mpg_data[i].city_mpg
+}
+let highway = getStatistics(h).mean
+let city = getStatistics(c).mean
 
+let ays = []
+for(let i = 0; i < mpg_data.length; i++) {
+    ays[i] = mpg_data[i].year
+}
+
+let hy = 0
+for(let i = 0; i < mpg_data.length; i++) {
+    if(mpg_data[i].hybrid)
+        hy+=1
+}
 
 /**
  * This object contains data that has to do with every car in the `mpg_data` object.
@@ -19,12 +37,17 @@ see under the methods section
  *
  * @param {allCarStats.ratioHybrids} ratio of cars that are hybrids
  */
-export const allCarStats = {
-    avgMpg: undefined,
-    allYearStats: undefined,
-    ratioHybrids: undefined,
-};
 
+ function isHybrid(o) {
+    return o.hybrid
+}
+let array = mpg_data.filter(isHybrid)
+
+export const allCarStats = {
+    avgMpg: {city, highway},
+    allYearStats: getStatistics(ays),
+    ratioHybrids: hy/mpg_data.length
+};
 
 /**
  * HINT: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
@@ -84,6 +107,6 @@ export const allCarStats = {
  * }
  */
 export const moreStats = {
-    makerHybrids: undefined,
+    makerHybrids: array,
     avgMpgByYearAndHybrid: undefined
 };
